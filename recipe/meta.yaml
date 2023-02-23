@@ -18,11 +18,9 @@ build:
 outputs:
   - name: pyribs
     build:
-      script: {{ PYTHON }} -m pip install . -vv --no-deps
+      script: python -m pip install . -vv --no-deps
       noarch: python
     requirements:
-      build:
-        - python
       host:
         - python >=3.7
         - pip
