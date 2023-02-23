@@ -6,7 +6,7 @@
 
 package:
   name: pyribs-split
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/ribs-{{ version }}.tar.gz
