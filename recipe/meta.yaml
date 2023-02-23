@@ -50,7 +50,7 @@ outputs:
       run:
         - python >=3.7
         - {{ pin_subpackage("pyribs", exact=True) }}
-        - matplotlib >=3.0.0
+        - matplotlib-base >=3.0.0
     test:
       imports:
         - ribs.visualize
