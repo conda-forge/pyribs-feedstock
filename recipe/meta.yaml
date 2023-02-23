@@ -15,10 +15,17 @@ source:
 build:
   number: 3
 
+requirements:
+  host:
+    - python >=3.7
+    - pip
+  run:
+    - python >=3.7
+
 outputs:
   - name: pyribs
     build:
-      script: python -m pip install . -vv
+      script: {{ PYTHON }} -m pip install . -vv
       noarch: python
     requirements:
       host:
