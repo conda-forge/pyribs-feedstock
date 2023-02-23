@@ -14,7 +14,7 @@ source:
 
 build:
   number: 2
-  # noarch: python
+  noarch: python
 
 requirements:
   build:
