@@ -1,3 +1,5 @@
+# Adapted from Gymnasium:
+# https://github.com/conda-forge/gymnasium-feedstock/blob/main/recipe/meta.yaml
 {% set name = "pyribs" %}
 {% set pypi_name = "ribs" %}
 {% set version = "0.5.0" %}
@@ -16,15 +18,24 @@ build:
   # noarch: python
 
 requirements:
+  build:
+    - python >=3.7
   host:
+    - python >=3.7
     - pip
+  run:
     - python >=3.7
 
 outputs:
   - name: pyribs
     build:
-      script: {{ PYTHON }} -m pip install . -vv
+      script: {{ PYTHON }} -m pip install . -vv --no-deps
     requirements:
+      build:
+        - python >=3.7
+      host:
+        - python >=3.7
+        - pip
       run:
         - numba >=0.51.0
         - numpy >=1.17.0
@@ -43,12 +54,14 @@ outputs:
         - pip check
       requires:
         - pip
+
   - name: pyribs-visualize
     requirements:
       host:
         - python >=3.7
+        - pip
       run:
-        - python >=3.7
+        - python
         - {{ pin_subpackage("pyribs", exact=True) }}
         - matplotlib-base >=3.0.0
     test:
@@ -58,6 +71,7 @@ outputs:
         - pip check
       requires:
         - pip
+
   - name: pyribs-all
     requirements:
       host:
