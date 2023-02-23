@@ -1,6 +1,6 @@
 {% set name = "pyribs" %}
 {% set pypi_name = "ribs" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/ribs-{{ version }}.tar.gz
-  sha256: 4796d9eb74b9a367511e6631800ff4e9bbaa57f5416d6a817f80155bbb558d4a
+  sha256: bdb8e7ccc4620f448b72a16fafff96fb0961a41405ec7b2f3ecb83dd291fa156
 
 build:
   number: 0
@@ -19,26 +19,22 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
-    # Same as pyribs-base https://github.com/conda-forge/pyribs-base-feedstock/blob/master/recipe/meta.yaml
-    - decorator >=4.0.0
     - numba >=0.51.0
     - numpy >=1.17.0
+    - numpy_groupies >=0.9.16
     - pandas >=1.0.0
-    - python >=3.6
-    - scikit-learn >=0.20
+    - python >=3.7
+    - scikit-learn >=0.20.0
     - scipy >=1.4.0
+    - semantic_version >=2.10
     - sortedcontainers >=2.0.0
-    - threadpoolctl >=2.0.0
-    - toml >=0.10.0
-    # Remaining deps come from the ribs[all] extra.
-    - matplotlib-base >=3.0.0
+    - threadpoolctl >=3.0.0
 
 test:
   imports:
     - ribs
-    - ribs.visualize
   commands:
     - pip check
   requires:
