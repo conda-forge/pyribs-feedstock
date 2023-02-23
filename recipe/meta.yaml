@@ -4,7 +4,7 @@
 
 
 package:
-  name: {{ name|lower }}
+  name: pyribs-split
   version: {{ version }}
 
 source:
@@ -12,33 +12,69 @@ source:
   sha256: bdb8e7ccc4620f448b72a16fafff96fb0961a41405ec7b2f3ecb83dd291fa156
 
 build:
-  number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
+  # noarch: python
 
 requirements:
   host:
     - pip
     - python >=3.7
-  run:
-    - numba >=0.51.0
-    - numpy >=1.17.0
-    - numpy_groupies >=0.9.16
-    - pandas >=1.0.0
-    - python >=3.7
-    - scikit-learn >=0.20.0
-    - scipy >=1.4.0
-    - semantic_version >=2.10
-    - sortedcontainers >=2.0.0
-    - threadpoolctl >=3.0.0
 
-test:
-  imports:
-    - ribs
-  commands:
-    - pip check
-  requires:
-    - pip
+outputs:
+  - name: pyribs
+    build:
+      script: {{ PYTHON }} -m pip install . -vv
+    requirements:
+      run:
+        - numba >=0.51.0
+        - numpy >=1.17.0
+        - numpy_groupies >=0.9.16
+        - pandas >=1.0.0
+        - python >=3.7
+        - scikit-learn >=0.20.0
+        - scipy >=1.4.0
+        - semantic_version >=2.10
+        - sortedcontainers >=2.0.0
+        - threadpoolctl >=3.0.0
+    test:
+      imports:
+        - ribs
+      commands:
+        - pip check
+      requires:
+        - pip
+  - name: pyribs-visualize
+    requirements:
+      host:
+        - python >=3.7
+      run:
+        - python >=3.7
+        - {{ pin_subpackage("pyribs", exact=True) }}
+        - matplotlib >=3.0.0
+    test:
+      imports:
+        - ribs.visualize
+      commands:
+        - pip check
+      requires:
+        - pip
+  - name: pyribs-all
+    requirements:
+      host:
+        - python >=3.7
+      run:
+        - python >=3.7
+        # Add future extras down here.
+        - {{ pin_subpackage("pyribs-visualize", exact=True) }}
+    test:
+      imports:
+        # Add extra pyribs imports here.
+        - ribs
+        - ribs.visualize
+      commands:
+        - pip check
+      requires:
+        - pip
 
 about:
   home: https://github.com/icaros-usc/pyribs
