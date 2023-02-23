@@ -18,7 +18,7 @@ build:
 
 requirements:
   build:
-    - python
+    - python >=3.7
   host:
     - python >=3.7
     - pip
@@ -31,7 +31,7 @@ outputs:
       script: {{ PYTHON }} -m pip install . -vv --no-deps
     requirements:
       build:
-        - python
+        - python >=3.7
       host:
         - python >=3.7
         - pip
