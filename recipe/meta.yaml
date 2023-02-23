@@ -20,7 +20,7 @@ requirements:
   build:
     - python
   host:
-    - python
+    - python >=3.7
     - pip
   run:
     - python >=3.7
@@ -33,7 +33,7 @@ outputs:
       build:
         - python
       host:
-        - python
+        - python >=3.7
         - pip
       run:
         - numba >=0.51.0
@@ -57,10 +57,10 @@ outputs:
   - name: pyribs-visualize
     requirements:
       host:
-        - python
+        - python >=3.7
         - pip
       run:
-        - python
+        - python >=3.7
         - {{ pin_subpackage("pyribs", exact=True) }}
         - matplotlib-base >=3.0.0
     test:
@@ -74,7 +74,8 @@ outputs:
   - name: pyribs-all
     requirements:
       host:
-        - python
+        - python >=3.7
+        - pip
       run:
         - python >=3.7
         # Add future extras down here.
