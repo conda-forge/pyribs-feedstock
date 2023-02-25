@@ -14,18 +14,18 @@ source:
 
 build:
   number: 3
+  noarch: generic
 
 requirements:
-  host:
-    - python >=3.7
-    - pip
+  build:
+    - python
   run:
     - python >=3.7
 
 outputs:
   - name: pyribs
     build:
-      script: {{ PYTHON }} -m pip install . -vv
+      script: {{ PYTHON }} -m pip install . -vv --no-deps
       noarch: python
     requirements:
       host:
@@ -51,6 +51,8 @@ outputs:
         - pip
 
   - name: pyribs-visualize
+    build:
+      noarch: python
     requirements:
       host:
         - python >=3.7
@@ -68,6 +70,8 @@ outputs:
         - pip
 
   - name: pyribs-all
+    build:
+      noarch: python
     requirements:
       host:
         - python >=3.7
