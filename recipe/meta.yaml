@@ -5,7 +5,7 @@
 
 
 package:
-  name: pyribs-split
+  name: pyribs-suite
   version: "{{ version }}"
 
 source:
@@ -13,15 +13,12 @@ source:
   sha256: bdb8e7ccc4620f448b72a16fafff96fb0961a41405ec7b2f3ecb83dd291fa156
 
 build:
-  number: 2
-  noarch: python
+  number: 3
+  noarch: generic
 
 requirements:
   build:
     - python
-  host:
-    - python
-    - pip
   run:
     - python >=3.7
 
@@ -29,11 +26,10 @@ outputs:
   - name: pyribs
     build:
       script: {{ PYTHON }} -m pip install . -vv --no-deps
+      noarch: python
     requirements:
-      build:
-        - python
       host:
-        - python
+        - python >=3.7
         - pip
       run:
         - numba >=0.51.0
@@ -55,9 +51,11 @@ outputs:
         - pip
 
   - name: pyribs-visualize
+    build:
+      noarch: python
     requirements:
       host:
-        - python
+        - python >=3.7
         - pip
       run:
         - python >=3.7
@@ -72,9 +70,11 @@ outputs:
         - pip
 
   - name: pyribs-all
+    build:
+      noarch: python
     requirements:
       host:
-        - python
+        - python >=3.7
         - pip
       run:
         - python >=3.7
