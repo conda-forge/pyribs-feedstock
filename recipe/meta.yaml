@@ -1,19 +1,19 @@
 # Adapted from Gymnasium:
 # https://github.com/conda-forge/gymnasium-feedstock/blob/main/recipe/meta.yaml
 {% set pypi_name = "ribs" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 
 
 package:
   name: pyribs-suite
-  version: "{{ version }}"
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/ribs-{{ version }}.tar.gz
-  sha256: bdb8e7ccc4620f448b72a16fafff96fb0961a41405ec7b2f3ecb83dd291fa156
+  sha256: 89b32a8f540df9cb1f9b363c91ef567fe83556337e1309e0dce78e18d27d21a0
 
 build:
-  number: 3
+  number: 0
   noarch: generic
 
 requirements:
