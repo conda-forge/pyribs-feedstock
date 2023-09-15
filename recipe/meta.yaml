@@ -33,13 +33,12 @@ outputs:
         - pip
       run:
         - numba >=0.51.0
-        - numpy >=1.17.0
+        - numpy >=1.17.3
         - numpy_groupies >=0.9.16
         - pandas >=1.0.0
         - python >=3.7
-        - scikit-learn >=0.20.0
+        - scikit-learn >=1.1.0
         - scipy >=1.4.0
-        - semantic_version >=2.10
         - sortedcontainers >=2.0.0
         - threadpoolctl >=3.0.0
     test:
@@ -61,6 +60,7 @@ outputs:
         - python >=3.7
         - {{ pin_subpackage("pyribs", exact=True) }}
         - matplotlib-base >=3.0.0
+        - shapely>=2.0.0
     test:
       imports:
         - ribs.visualize
