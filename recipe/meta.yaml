@@ -20,7 +20,7 @@ requirements:
   build:
     - python
   run:
-    - python >=3.7
+    - python >=3.8
 
 outputs:
   - name: pyribs
@@ -29,14 +29,14 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.7
+        - python >=3.8
         - pip
       run:
         - numba >=0.51.0
         - numpy >=1.17.3
         - numpy_groupies >=0.9.16
         - pandas >=1.0.0
-        - python >=3.7
+        - python >=3.8
         - scikit-learn >=1.1.0
         - scipy >=1.4.0
         - sortedcontainers >=2.0.0
@@ -54,10 +54,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.7
+        - python >=3.8
         - pip
       run:
-        - python >=3.7
+        - python >=3.8
         - {{ pin_subpackage("pyribs", exact=True) }}
         - matplotlib-base >=3.0.0
         - shapely >=2.0.0
@@ -74,10 +74,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.7
+        - python >=3.8
         - pip
       run:
-        - python >=3.7
+        - python >=3.8
         # Add future extras down here.
         - {{ pin_subpackage("pyribs-visualize", exact=True) }}
     test:
