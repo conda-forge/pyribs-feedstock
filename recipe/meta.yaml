@@ -1,7 +1,7 @@
 # Adapted from Gymnasium:
 # https://github.com/conda-forge/gymnasium-feedstock/blob/main/recipe/meta.yaml
 {% set pypi_name = "ribs" %}
-{% set version = "0.6.4" %}
+{% set version = "0.7.0" %}
 
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/ribs-{{ version }}.tar.gz
-  sha256: 6fe1284c65a9c9db6fabc17a770d26db905b7a50e26a220ead3475678aff7afd
+  sha256: 3799ef4483c6bfd4c2620301fa96781496b74e48194ccbafd76353a7c6b3944d
 
 build:
   number: 0
@@ -20,7 +20,7 @@ requirements:
   build:
     - python
   run:
-    - python >=3.7
+    - python >=3.8
 
 outputs:
   - name: pyribs
@@ -29,16 +29,16 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.7
+        - python >=3.8
         - pip
       run:
         - numba >=0.51.0
         - numpy >=1.17.3
         - numpy_groupies >=0.9.16
         - pandas >=1.0.0
-        - python >=3.7
+        - python >=3.8
         - scikit-learn >=1.1.0
-        - scipy >=1.4.0
+        - scipy >=1.7.0
         - sortedcontainers >=2.0.0
         - threadpoolctl >=3.0.0
     test:
@@ -54,10 +54,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.7
+        - python >=3.8
         - pip
       run:
-        - python >=3.7
+        - python >=3.8
         - {{ pin_subpackage("pyribs", exact=True) }}
         - matplotlib-base >=3.0.0
         - shapely >=2.0.0
@@ -69,17 +69,37 @@ outputs:
       requires:
         - pip
 
+  - name: pyribs-pycma
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python >=3.8
+        - pip
+      run:
+        - python >=3.8
+        - {{ pin_subpackage("pyribs", exact=True) }}
+        - cma
+    test:
+      imports:
+        - ribs
+      commands:
+        - pip check
+      requires:
+        - pip
+
   - name: pyribs-all
     build:
       noarch: python
     requirements:
       host:
-        - python >=3.7
+        - python >=3.8
         - pip
       run:
-        - python >=3.7
+        - python >=3.8
         # Add future extras down here.
         - {{ pin_subpackage("pyribs-visualize", exact=True) }}
+        - {{ pin_subpackage("pyribs-pycma", exact=True) }}
     test:
       imports:
         # Add extra pyribs imports here.
