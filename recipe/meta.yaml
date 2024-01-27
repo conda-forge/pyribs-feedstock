@@ -38,7 +38,7 @@ outputs:
         - pandas >=1.0.0
         - python >=3.8
         - scikit-learn >=1.1.0
-        - scipy >=1.4.0
+        - scipy >=1.7.0
         - sortedcontainers >=2.0.0
         - threadpoolctl >=3.0.0
     test:
@@ -69,6 +69,25 @@ outputs:
       requires:
         - pip
 
+  - name: pyribs-pycma
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python >=3.8
+        - pip
+      run:
+        - python >=3.8
+        - {{ pin_subpackage("pyribs", exact=True) }}
+        - cma
+    test:
+      imports:
+        - ribs
+      commands:
+        - pip check
+      requires:
+        - pip
+
   - name: pyribs-all
     build:
       noarch: python
@@ -80,6 +99,7 @@ outputs:
         - python >=3.8
         # Add future extras down here.
         - {{ pin_subpackage("pyribs-visualize", exact=True) }}
+        - {{ pin_subpackage("pyribs-pycma", exact=True) }}
     test:
       imports:
         # Add extra pyribs imports here.
