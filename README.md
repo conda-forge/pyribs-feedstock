@@ -29,6 +29,7 @@ Current release info
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyribs-green.svg)](https://anaconda.org/conda-forge/pyribs) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyribs.svg)](https://anaconda.org/conda-forge/pyribs) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyribs.svg)](https://anaconda.org/conda-forge/pyribs) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyribs.svg)](https://anaconda.org/conda-forge/pyribs) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyribs--all-green.svg)](https://anaconda.org/conda-forge/pyribs-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyribs-all.svg)](https://anaconda.org/conda-forge/pyribs-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyribs-all.svg)](https://anaconda.org/conda-forge/pyribs-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyribs-all.svg)](https://anaconda.org/conda-forge/pyribs-all) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pyribs--pycma-green.svg)](https://anaconda.org/conda-forge/pyribs-pycma) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyribs-pycma.svg)](https://anaconda.org/conda-forge/pyribs-pycma) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyribs-pycma.svg)](https://anaconda.org/conda-forge/pyribs-pycma) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyribs-pycma.svg)](https://anaconda.org/conda-forge/pyribs-pycma) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyribs--visualize-green.svg)](https://anaconda.org/conda-forge/pyribs-visualize) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyribs-visualize.svg)](https://anaconda.org/conda-forge/pyribs-visualize) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyribs-visualize.svg)](https://anaconda.org/conda-forge/pyribs-visualize) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyribs-visualize.svg)](https://anaconda.org/conda-forge/pyribs-visualize) |
 
 Installing pyribs-suite
@@ -41,16 +42,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pyribs, pyribs-all, pyribs-visualize` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `pyribs, pyribs-all, pyribs-pycma, pyribs-visualize` can be installed with `conda`:
 
 ```
-conda install pyribs pyribs-all pyribs-visualize
+conda install pyribs pyribs-all pyribs-pycma pyribs-visualize
 ```
 
 or with `mamba`:
 
 ```
-mamba install pyribs pyribs-all pyribs-visualize
+mamba install pyribs pyribs-all pyribs-pycma pyribs-visualize
 ```
 
 It is possible to list all of the versions of `pyribs` available on your platform with `conda`:
