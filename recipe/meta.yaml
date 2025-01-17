@@ -9,11 +9,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/ribs-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/ribs-{{ version }}.tar.gz
   sha256: 9b20229926e8bd7de7e7e716cd4c2755233a9d71aee2ece127b897d407c7a990
 
 build:
-  number: 0
+  number: 1
   noarch: generic
 
 requirements:
@@ -29,14 +29,14 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.8
+        - python {{ python_min }}
         - pip
       run:
         - numba >=0.51.0
         - numpy >=1.17.3
         - numpy_groupies >=0.9.16
         - pandas >=1.0.0
-        - python >=3.8
+        - python >={{ python_min }}
         - scikit-learn >=1.1.0
         - scipy >=1.7.0
         - sortedcontainers >=2.0.0
@@ -54,10 +54,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.8
+        - python {{ python_min }}
         - pip
       run:
-        - python >=3.8
+        - python >={{ python_min }}
         - {{ pin_subpackage("pyribs", exact=True) }}
         - matplotlib-base >=3.0.0
         - shapely >=2.0.0
@@ -74,10 +74,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.8
+        - python {{ python_min }}
         - pip
       run:
-        - python >=3.8
+        - python >={{ python_min }}
         - {{ pin_subpackage("pyribs", exact=True) }}
         - cma
     test:
@@ -93,10 +93,10 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.8
+        - python {{ python_min }}
         - pip
       run:
-        - python >=3.8
+        - python >={{ python_min }}
         # Add future extras down here.
         - {{ pin_subpackage("pyribs-visualize", exact=True) }}
         - {{ pin_subpackage("pyribs-pycma", exact=True) }}
@@ -109,6 +109,7 @@ outputs:
         - pip check
       requires:
         - pip
+        - python {{ python_min }}
 
 about:
   home: https://github.com/icaros-usc/pyribs
