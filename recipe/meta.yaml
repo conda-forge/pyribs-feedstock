@@ -20,7 +20,7 @@ requirements:
   build:
     - python
   run:
-    - python >=3.8
+    - python >=3.9
 
 outputs:
   - name: pyribs
@@ -88,6 +88,25 @@ outputs:
       requires:
         - pip
 
+  - name: pyribs-pymoo
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+        - pip
+      run:
+        - python >={{ python_min }}
+        - {{ pin_subpackage("pyribs", exact=True) }}
+        - pymoo
+    test:
+      imports:
+        - ribs
+      commands:
+        - pip check
+      requires:
+        - pip
+
   - name: pyribs-all
     build:
       noarch: python
@@ -100,6 +119,7 @@ outputs:
         # Add future extras down here.
         - {{ pin_subpackage("pyribs-visualize", exact=True) }}
         - {{ pin_subpackage("pyribs-pycma", exact=True) }}
+        - {{ pin_subpackage("pyribs-pymoo", exact=True) }}
     test:
       imports:
         # Add extra pyribs imports here.
