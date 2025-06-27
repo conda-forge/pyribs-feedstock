@@ -31,6 +31,7 @@ outputs:
       host:
         - python {{ python_min }}
         - pip
+        - setuptools
       run:
         - numba >=0.51.0
         - numpy >=1.17.3
@@ -56,6 +57,7 @@ outputs:
       host:
         - python {{ python_min }}
         - pip
+        - setuptools
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage("pyribs", exact=True) }}
@@ -76,6 +78,7 @@ outputs:
       host:
         - python {{ python_min }}
         - pip
+        - setuptools
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage("pyribs", exact=True) }}
@@ -95,6 +98,7 @@ outputs:
       host:
         - python {{ python_min }}
         - pip
+        - setuptools
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage("pyribs", exact=True) }}
@@ -114,6 +118,7 @@ outputs:
       host:
         - python {{ python_min }}
         - pip
+        - setuptools
       run:
         - python >={{ python_min }}
         # Add future extras down here.
