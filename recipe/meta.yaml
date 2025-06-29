@@ -83,8 +83,8 @@ outputs:
         - setuptools
       run:
         - python >={{ python_min }}
-        # Add future extras down here.
         - {{ pin_subpackage("pyribs-visualize", exact=True) }}
+        # Extra dependencies used by various components.
         - cma
         - pymoo
     test:
