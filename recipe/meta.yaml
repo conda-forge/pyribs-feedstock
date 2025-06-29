@@ -73,48 +73,6 @@ outputs:
         - python {{ python_min }}
         - pip
 
-  - name: pyribs-pycma
-    build:
-      noarch: python
-    requirements:
-      host:
-        - python {{ python_min }}
-        - pip
-        - setuptools
-      run:
-        - python >={{ python_min }}
-        - {{ pin_subpackage("pyribs", exact=True) }}
-        - cma
-    test:
-      imports:
-        - ribs
-      commands:
-        - pip check
-      requires:
-        - python {{ python_min }}
-        - pip
-
-  - name: pyribs-pymoo
-    build:
-      noarch: python
-    requirements:
-      host:
-        - python {{ python_min }}
-        - pip
-        - setuptools
-      run:
-        - python >={{ python_min }}
-        - {{ pin_subpackage("pyribs", exact=True) }}
-        - pymoo
-    test:
-      imports:
-        - ribs
-      commands:
-        - pip check
-      requires:
-        - python {{ python_min }}
-        - pip
-
   - name: pyribs-all
     build:
       noarch: python
@@ -127,8 +85,8 @@ outputs:
         - python >={{ python_min }}
         # Add future extras down here.
         - {{ pin_subpackage("pyribs-visualize", exact=True) }}
-        - {{ pin_subpackage("pyribs-pycma", exact=True) }}
-        - {{ pin_subpackage("pyribs-pymoo", exact=True) }}
+        - cma
+        - pymoo
     test:
       imports:
         # Add extra pyribs imports here.
