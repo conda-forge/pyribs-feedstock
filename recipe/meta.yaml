@@ -1,7 +1,7 @@
 # Adapted from Gymnasium:
 # https://github.com/conda-forge/gymnasium-feedstock/blob/main/recipe/meta.yaml
 {% set pypi_name = "ribs" %}
-{% set version = "0.7.1" %}
+{% set version = "0.8.0" %}
 
 
 package:
@@ -10,17 +10,17 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/ribs-{{ version }}.tar.gz
-  sha256: 9b20229926e8bd7de7e7e716cd4c2755233a9d71aee2ece127b897d407c7a990
+  sha256: df33199673db88c054295a8ce70d1ed81e0ff747f795ba70c88b04274f0e6fd1
 
 build:
-  number: 2
+  number: 0
   noarch: generic
 
 requirements:
   build:
     - python
   run:
-    - python >=3.8
+    - python >=3.9
 
 outputs:
   - name: pyribs
@@ -31,6 +31,7 @@ outputs:
       host:
         - python {{ python_min }}
         - pip
+        - setuptools
       run:
         - numba >=0.51.0
         - numpy >=1.17.3
@@ -47,6 +48,7 @@ outputs:
       commands:
         - pip check
       requires:
+        - python {{ python_min }}
         - pip
 
   - name: pyribs-visualize
@@ -56,6 +58,7 @@ outputs:
       host:
         - python {{ python_min }}
         - pip
+        - setuptools
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage("pyribs", exact=True) }}
@@ -67,25 +70,7 @@ outputs:
       commands:
         - pip check
       requires:
-        - pip
-
-  - name: pyribs-pycma
-    build:
-      noarch: python
-    requirements:
-      host:
         - python {{ python_min }}
-        - pip
-      run:
-        - python >={{ python_min }}
-        - {{ pin_subpackage("pyribs", exact=True) }}
-        - cma
-    test:
-      imports:
-        - ribs
-      commands:
-        - pip check
-      requires:
         - pip
 
   - name: pyribs-all
@@ -95,11 +80,13 @@ outputs:
       host:
         - python {{ python_min }}
         - pip
+        - setuptools
       run:
         - python >={{ python_min }}
-        # Add future extras down here.
         - {{ pin_subpackage("pyribs-visualize", exact=True) }}
-        - {{ pin_subpackage("pyribs-pycma", exact=True) }}
+        # Extra dependencies used by various components.
+        - cma
+        - pymoo
     test:
       imports:
         # Add extra pyribs imports here.
@@ -108,8 +95,8 @@ outputs:
       commands:
         - pip check
       requires:
-        - pip
         - python {{ python_min }}
+        - pip
 
 about:
   home: https://github.com/icaros-usc/pyribs
