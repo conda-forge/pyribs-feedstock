@@ -29,8 +29,14 @@ Current release info
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyribs-green.svg)](https://anaconda.org/conda-forge/pyribs) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyribs.svg)](https://anaconda.org/conda-forge/pyribs) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyribs.svg)](https://anaconda.org/conda-forge/pyribs) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyribs.svg)](https://anaconda.org/conda-forge/pyribs) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyribs--all-green.svg)](https://anaconda.org/conda-forge/pyribs-all) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyribs-all.svg)](https://anaconda.org/conda-forge/pyribs-all) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyribs-all.svg)](https://anaconda.org/conda-forge/pyribs-all) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyribs-all.svg)](https://anaconda.org/conda-forge/pyribs-all) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-pyribs--pycma-green.svg)](https://anaconda.org/conda-forge/pyribs-pycma) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyribs-pycma.svg)](https://anaconda.org/conda-forge/pyribs-pycma) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyribs-pycma.svg)](https://anaconda.org/conda-forge/pyribs-pycma) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyribs-pycma.svg)](https://anaconda.org/conda-forge/pyribs-pycma) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pyribs--visualize-green.svg)](https://anaconda.org/conda-forge/pyribs-visualize) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyribs-visualize.svg)](https://anaconda.org/conda-forge/pyribs-visualize) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyribs-visualize.svg)](https://anaconda.org/conda-forge/pyribs-visualize) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyribs-visualize.svg)](https://anaconda.org/conda-forge/pyribs-visualize) |
+
+No Longer Maintained
+--------------------
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pyribs--pycma-green.svg)](https://anaconda.org/conda-forge/pyribs-pycma) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pyribs-pycma.svg)](https://anaconda.org/conda-forge/pyribs-pycma) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pyribs-pycma.svg)](https://anaconda.org/conda-forge/pyribs-pycma) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pyribs-pycma.svg)](https://anaconda.org/conda-forge/pyribs-pycma) |
 
 Installing pyribs-suite
 =======================
