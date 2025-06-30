@@ -1,7 +1,7 @@
 # Adapted from Gymnasium:
 # https://github.com/conda-forge/gymnasium-feedstock/blob/main/recipe/meta.yaml
 {% set pypi_name = "ribs" %}
-{% set version = "0.8.0" %}
+{% set version = "0.8.1" %}
 
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/ribs-{{ version }}.tar.gz
-  sha256: df33199673db88c054295a8ce70d1ed81e0ff747f795ba70c88b04274f0e6fd1
+  sha256: 13eb4d8ba023d1503917a55cd643dcce1f1be4204ef41a55c4929a9bc4473302
 
 build:
   number: 0
