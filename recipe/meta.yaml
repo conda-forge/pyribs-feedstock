@@ -89,6 +89,8 @@ outputs:
         # Extra dependencies used by various components.
         - cma
         - pymoo
+        - pytorch
+        - zuko >=1.0.0
     test:
       imports:
         # Add extra pyribs imports here.
