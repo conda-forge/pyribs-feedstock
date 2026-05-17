@@ -1,7 +1,7 @@
 # Adapted from Gymnasium:
 # https://github.com/conda-forge/gymnasium-feedstock/blob/main/recipe/meta.yaml
 {% set pypi_name = "ribs" %}
-{% set version = "0.10.0" %}
+{% set version = "0.11.0" %}
 
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/ribs-{{ version }}.tar.gz
-  sha256: f0cb51d3cb7c5aac6a3228b7915dc7b8657fb192a1a0a8baf48c7348acbb498c
+  sha256: 048e7b447a45c8aa8c70846e769be55c40d73c3c80e7fbc134df82493a590243
 
 build:
   number: 0
@@ -89,6 +89,8 @@ outputs:
         # Extra dependencies used by various components.
         - cma
         - pymoo
+        - pytorch
+        - zuko >=1.0.0
     test:
       imports:
         # Add extra pyribs imports here.
