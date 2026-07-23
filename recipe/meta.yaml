@@ -66,6 +66,7 @@ outputs:
         - {{ pin_subpackage("pyribs", exact=True) }}
         - matplotlib-base >=3.0.0
         - shapely >=2.0.0
+        - seaborn >=0.11.0
     test:
       imports:
         - ribs.visualize
